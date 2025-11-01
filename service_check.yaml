@@ -1,0 +1,17 @@
+- name: Check service status
+  hosts: all
+  tasks:
+    - name: Get service info
+      shell: systemctl status nginx
+      register: service_check
+      ignore_errors: yes
+    
+    - name: print service_check
+      ansible.builtin.debug:
+        var: service_check
+
+    - name: Restart service if stopped
+      service:
+        name: nginx
+        state: restarted
+      when: service_check.rc != 0
