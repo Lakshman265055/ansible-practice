@@ -3,8 +3,8 @@
   become: yes
   # vars:
   #   dog: raju
-  vars_files:
-   - sample_vars.yaml
+  # vars_files:
+  #  - sample_vars.yaml
 
 
   tasks:
