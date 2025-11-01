@@ -1,8 +1,10 @@
 - name: practice ansible
   hosts: all
   become: yes
-  vars:
-    dog: raju
+  # vars:
+  #   dog: raju
+  vars_files:
+   - sample_vars.yaml
 
 
   tasks:
@@ -24,11 +26,11 @@
     #   ignore_errors: yes
 
 
-    # - name: print checking vars
-    #   ansible.builtin.debug:
-    #    msg : " checking vars is {{ dog }}"
-
-
     - name: print checking vars
       ansible.builtin.debug:
-       var: dog
+       msg : " checking vars is {{ service_name }}"
+
+
+    # - name: print checking vars
+    #   ansible.builtin.debug:
+    #    var: dog
