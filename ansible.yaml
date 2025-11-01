@@ -12,9 +12,12 @@
       register: nginx_status
 
 
+    # - name: print status
+    #   ansible.builtin.debug:
+    #    var: ansible_facts
     - name: print status
       ansible.builtin.debug:
-       var: ansible_facts
+       var: " this is distro name {{ ansible_facts.devices.distribution }}"
     - name: print variable inside ngixn
       ansible.builtin.debug:
        msg : " nginx status is {{ nginx_status.status.ActiveState }}"
