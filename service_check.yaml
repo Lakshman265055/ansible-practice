@@ -1,5 +1,7 @@
 - name: Check service status
   hosts: all
+  become: yes
+
   tasks:
     - name: Get service info
       shell: systemctl status nginx
