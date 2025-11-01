@@ -15,12 +15,15 @@
     # - name: print status
     #   ansible.builtin.debug:
     #    var: ansible_facts
-    - name: print status
-      ansible.builtin.debug:
-       var: " this is distro name {{ ansible_facts.devices.distribution }}"
-      ignore_errors: yes
 
-      
-    - name: print variable inside ngixn
+
+       
+    # - name: print status
+    #   ansible.builtin.debug:
+    #    var: " this is distro name {{ ansible_facts.devices.distribution }}"
+    #   ignore_errors: yes
+
+
+    - name: print checking vars
       ansible.builtin.debug:
-       msg : " nginx status is {{ nginx_status.status.ActiveState }}"
+       msg : " checking vars is {{ dog }}"
