@@ -7,11 +7,11 @@
 
   tasks:
     - name: check status of nginx
-      ansible.buildin.systemd:
+      ansible.builtin.systemd:
        name: nginx
       register: nginx_status
 
 
     - name: print status
-      ansible.buildin.debug:
+      ansible.builtin.debug:
        var: nginx_status
