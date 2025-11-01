@@ -18,6 +18,9 @@
     - name: print status
       ansible.builtin.debug:
        var: " this is distro name {{ ansible_facts.devices.distribution }}"
+      ignore_errors: yes
+
+      
     - name: print variable inside ngixn
       ansible.builtin.debug:
        msg : " nginx status is {{ nginx_status.status.ActiveState }}"
