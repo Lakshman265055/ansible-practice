@@ -1,0 +1,16 @@
+- name: practice ansible
+  hosts: all
+  vars:
+    dog: raju
+
+
+  tasks:
+    - name: check status of nginx
+      ansible.buildin.systemd:
+       name: nginx
+      register: nginx_status
+
+
+    - name: print status
+      ansible.buildin.debug:
+       var: nginx_status
