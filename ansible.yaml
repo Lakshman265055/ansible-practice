@@ -24,6 +24,11 @@
     #   ignore_errors: yes
 
 
+    # - name: print checking vars
+    #   ansible.builtin.debug:
+    #    msg : " checking vars is {{ dog }}"
+
+
     - name: print checking vars
       ansible.builtin.debug:
-       msg : " checking vars is {{ dog }}"
+       var: dog
